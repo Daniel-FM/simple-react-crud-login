@@ -1,0 +1,19 @@
+.centered{
+    text-align: center;
+}
+
+.centered > * {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.centered :last-of-type{
+    margin-right: 0;
+}
+
+.linkButton{
+    font-weight: bold;
+    color: royalblue;
+}
