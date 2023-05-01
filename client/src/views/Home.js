@@ -11,7 +11,6 @@ export const Home = () => {
 
   useEffect(() => {
     const checkLoggedIn = async() => {
-      console.log("Checking if client is logged in...");
       try {
         const client = await AuthService.getLoggedInClient();
         setLoggedClient(client);

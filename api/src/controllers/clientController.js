@@ -40,7 +40,7 @@ class ClientController{
                 } else {
                     try{
                         const client = await this.clientRepository.findOneById(decodedToken.id);
-                        res.statusHttpStatus.OK.json(client);
+                        res.status(HttpStatus.OK).json(client);
                     }catch{
                         console.log("Error: no client found with the token's id: "+decodedToken.id);
                         res.status(HttpStatus.NOT_FOUND).send();
@@ -60,7 +60,7 @@ class ClientController{
 
             // O tempo de expiração de um cookie deve ser em milissegundos
             res.cookie('jwt', token, { httpOnly: true, maxAge: MAX_AGE * 1000 });
-            res.statusHttpStatus.OK.json({ client: client._id });
+            res.status(HttpStatus.OK).json({ client: client._id });
             
         }catch(e){
             console.log(e);
@@ -70,7 +70,7 @@ class ClientController{
 
     logout = (req,res) => {
         res.clearCookie("jwt");
-        res.statusHttpStatus.OK.send();
+        res.status(HttpStatus.OK).send();
     }
 
 }
