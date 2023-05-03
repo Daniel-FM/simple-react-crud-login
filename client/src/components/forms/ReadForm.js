@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CrudService } from "src/service/CrudService";
-
-import "./AllForms.css"
+import formStyles from "src/css_modules/Forms.module.css"
+import "./AllCrudForms.css"
 
 export const ReadForm = () =>{
 
@@ -54,8 +54,8 @@ export const ReadForm = () =>{
     }
 
     return(
-        <div className="basicForm">
-            <form onSubmit={submit}>
+        <div className="flexArea">
+            <form className={formStyles.formArea} onSubmit={submit}>
                 <div className="formField">
                     <input 
                         type="text" placeholder="Id" value={id} 
@@ -65,7 +65,6 @@ export const ReadForm = () =>{
                 <button type="submit">Get user(s)</button>
                 <p>{message}</p>
             </form>
-            
             <div>
                 {users.map((eachUser)=>(
                     <div key={eachUser._id} className="userCard">

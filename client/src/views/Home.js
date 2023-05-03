@@ -31,8 +31,8 @@ export const Home = () => {
     return <div>Falha de conexão com a API.</div>
   } else if (loggedClient) {
     return(
-      <div className="App">
-        <Header/>
+      <div>
+        <Header client={loggedClient}/>
         <CrudArea/>
       </div>
     )

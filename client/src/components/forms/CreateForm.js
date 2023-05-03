@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { CrudService } from "src/service/CrudService";
-
-import "./AllForms.css"
+import formStyles from "src/css_modules/Forms.module.css"
 
 export const CreateForm = () =>{
 
@@ -38,7 +37,7 @@ export const CreateForm = () =>{
     }
 
     return(
-        <form onSubmit={submit}>
+        <form className={formStyles.formArea} onSubmit={submit}>
             <div className="formField">
                 <input 
                     type="text" placeholder="Name" value={name} 

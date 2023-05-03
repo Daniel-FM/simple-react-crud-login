@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { AuthService } from "src/service/AuthService";
 import { Link, useNavigate } from 'react-router-dom';
-import styles from "src/components/Header.module.css"
+
+import headerStyles from "src/css_modules/Header.module.css"
+import formStyles from "src/css_modules/Forms.module.css"
 
 export const Signup = () =>{
 
@@ -42,19 +44,19 @@ export const Signup = () =>{
 
     return(
         <>
-        <div className={styles.centered}>
+        <div className={headerStyles.centered}>
             <Link to="/">Home</Link>
             <Link to="/">Login</Link>
         </div>
-        <h1>Criar nova conta</h1>
-        <form onSubmit={submit}>
-            <div className="formField">
+        <form className={formStyles.formArea} onSubmit={submit}>
+            <h1>Criar nova conta</h1>
+            <div>
                 <input 
-                    type="text" placeholder="email" value={email} 
+                    type="text" placeholder="Email" value={email} 
                     onChange={(event)=>setEmail(event.target.value)}
                 />
             </div>
-            <div className="formField">
+            <div>
                 <input 
                     type="password" placeholder="Senha" value={pass} 
                     onChange={(event)=>setPass(event.target.value)}

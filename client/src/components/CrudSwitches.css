@@ -1,8 +1,8 @@
-.header{
+.CrudSwitchesArea{
     display: flex;
 }
 
-.headerButton{
+.CrudSwitchesButton{
     margin: 15px;
     margin-top: 0;
     margin-right: 0;
@@ -12,6 +12,10 @@
     width: 150px;
 }
 
-.headerButton.active{
+.CrudSwitchesButton > *{
+    text-align: center;
+}
+
+.CrudSwitchesButton.active{
     background-color: orange;
 }

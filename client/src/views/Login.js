@@ -2,8 +2,8 @@ import { useState } from "react";
 import { AuthService } from "src/service/AuthService"
 import { Link, useNavigate } from 'react-router-dom';
 
-import "./Home.css"
-import styles from "src/components/Header.module.css"
+import headerStyles from "src/css_modules/Header.module.css"
+import formStyles from "src/css_modules/Forms.module.css"
 
 export const Login = () =>{
 
@@ -42,13 +42,13 @@ export const Login = () =>{
 
     return(
         <>
-        <div className={styles.centered}>
+        <div className={headerStyles.centered}>
             <Link to="/">Home</Link>
             <Link to="/signup">Signup</Link>
         </div>
-        <h1>Login</h1>
         
-        <form onSubmit={submit}>
+        <form className={formStyles.formArea} onSubmit={submit}>
+            <h1>Login</h1>
             <div className="formField">
                 <input 
                     type="text" placeholder="Email" value={email} 

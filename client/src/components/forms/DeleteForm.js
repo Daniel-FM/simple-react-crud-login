@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { CrudService } from "src/service/CrudService";
-
-import "./AllForms.css"
+import formStyles from "src/css_modules/Forms.module.css"
 
 export const DeleteForm = () =>{
     const [id, setId] = useState("");
@@ -34,7 +33,7 @@ export const DeleteForm = () =>{
     }
 
     return(
-        <form onSubmit={submit}>
+        <form className={formStyles.formArea} onSubmit={submit}>
             <div className="formField">
                 <input 
                     type="text" placeholder="Id" value={id} 

@@ -1,12 +1,3 @@
-.formField{
-    margin-bottom: 5px;
-    margin-right: 170px;
-}
-
-.basicForm{
-    display: flex;
-}
-
 .userCard{
     border-color:darkred;
     border-style: solid;
@@ -14,4 +5,8 @@
     padding: 10px;
     background-color: gold;
     border-radius: 10px;
+}
+
+.flexArea{
+    display: flex;
 }

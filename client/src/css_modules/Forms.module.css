@@ -1,0 +1,9 @@
+.formArea{
+    margin-left: 15px;
+    margin-right: 170px;
+}
+
+.formArea > * {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}

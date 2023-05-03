@@ -5,16 +5,16 @@ export const CrudSwitches = (props) => {
 
     const [activeMode, setActiveMode] = useState("Create");
 
-    const [classNameCreate, setClassNameCreate] = useState(["headerButton",""]);
-    const [classNameRead, setClassNameRead] = useState(["headerButton",""]);
-    const [classNameUpdate, setClassNameUpdate] = useState(["headerButton",""]);
-    const [classNameDelete, setClassNameDelete] = useState(["headerButton",""]);
+    const [classNameCreate, setClassNameCreate] = useState(["CrudSwitchesButton",""]);
+    const [classNameRead, setClassNameRead] = useState(["CrudSwitchesButton",""]);
+    const [classNameUpdate, setClassNameUpdate] = useState(["CrudSwitchesButton",""]);
+    const [classNameDelete, setClassNameDelete] = useState(["CrudSwitchesButton",""]);
 
     useEffect(()=>{
-        setClassNameCreate(["headerButton", activeMode === "Create" ? "active" : ""]);
-        setClassNameRead(["headerButton", activeMode === "Read" ? "active" : ""]);
-        setClassNameUpdate(["headerButton", activeMode === "Update" ? "active" : ""]);
-        setClassNameDelete(["headerButton", activeMode === "Delete" ? "active" : ""]);
+        setClassNameCreate(["CrudSwitchesButton", activeMode === "Create" ? "active" : ""]);
+        setClassNameRead(["CrudSwitchesButton", activeMode === "Read" ? "active" : ""]);
+        setClassNameUpdate(["CrudSwitchesButton", activeMode === "Update" ? "active" : ""]);
+        setClassNameDelete(["CrudSwitchesButton", activeMode === "Delete" ? "active" : ""]);
     },[activeMode]);
 
     const updateMode = (newMode)=>{
@@ -26,7 +26,7 @@ export const CrudSwitches = (props) => {
 
     return(
         <div>
-            <div className="header">
+            <div className="CrudSwitchesArea">
                 <div className={classNameCreate.join(" ").trim()} onClick={()=>updateMode("Create")}>
                     <h1>Create</h1>
                 </div>
