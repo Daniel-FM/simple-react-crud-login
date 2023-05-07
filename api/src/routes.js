@@ -3,7 +3,13 @@ const router = express.Router();
 const UserController = require('./controllers/userController');
 const ClientController = require('./controllers/clientController');
 
+returnOk = async(req,res) => {
+    res.status(200).send();
+}
+
 function routes(repositories){
+
+    router.get('/okresponse', returnOk);
 
     const userController = new UserController(repositories.user);
     router.get('/users/', userController.getAllUsers);
