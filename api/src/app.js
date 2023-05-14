@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const cookieParser = require('cookie-parser');
-const cors = require('cors')
 
 // Uma coleção de objetos com métodos de bancos de dados (models/repositories) é passado como argumento para que o objeto 
 // app possa se abstrair de especificidades do banco de dados usado (por exemplo, o arquivo userRepository.js deste 
@@ -10,8 +9,6 @@ const cors = require('cors')
 // que geram os mesmos resultados, ele poderá ser passado aqui sem que a aplicação do servidor note qualquer distinção)
 function getApp(repositories){
     const app = express();
-
-    // app.use(cors());
 
     // Este middleware faz com que as requisições que passem pelo servidor que sejam strings no formato json
     // sejam transformadas em actual objetos json. Dessa forma, quando pegarmos o campo body de uma response,

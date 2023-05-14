@@ -63,7 +63,7 @@ class ClientController{
             res.status(HttpStatus.OK).json({ client: client._id });
             
         }catch(e){
-            console.log(e);
+            console.log("Error while trying to login", e);
             res.status(HttpStatus.NOT_FOUND).send();
         }
     }
