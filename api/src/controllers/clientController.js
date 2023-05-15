@@ -32,6 +32,7 @@ class ClientController{
     getLoggedInClient = async(req, res) => {
         const token = req.cookies.jwt;
         if (token) {
+            console.log("token: ",token);
             jwt.verify(token, PRIVATE_KEY, async (err, decodedToken) => {
 
                 if (err) {
@@ -58,8 +59,14 @@ class ClientController{
             const client = await this.clientRepository.checkCredentials(req.body);
             const token = createToken(client._id);
 
-            // O tempo de expiração de um cookie deve ser em milissegundos
-            res.cookie('jwt', token, { httpOnly: true, maxAge: MAX_AGE * 1000 });
+            //  O tempo de expiração de um cookie deve ser em milissegundos
+            res.cookie('jwt', token, { 
+                httpOnly: true, 
+                maxAge: MAX_AGE * 1000, 
+                domain: "https://simple-react-crud-login.vercel.app/", 
+                secure: true,
+                sameSite: "none"
+            });
             res.status(HttpStatus.OK).json({ client: client._id });
             
         }catch(e){
